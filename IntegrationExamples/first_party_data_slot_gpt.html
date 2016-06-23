@@ -1,0 +1,84 @@
+<html lang="en-us">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8"> 
+<style type="text/css" media="screen"> 
+</style>
+<script type='text/javascript'>
+var rubicontag = rubicontag || {};
+    rubicontag.cmd = rubicontag.cmd || [];
+var gptadslots = [];
+var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+(function() {
+    // replace '14062' with your rubicon project account id number a test account is used for demo purposes
+    var account_id = 14062;
+    var rct = document.createElement('script');
+        rct.type = 'text/javascript'
+        rct.async = true;
+        rct.src = (document.location.protocol === 'https:' ? 'https:' : 'http:') + '//ads.rubiconproject.com/header/' + account_id + '.js';
+    var node = document.getElementsByTagName('script')[0];
+        node.parentNode.appendChild(rct);
+})();
+</script>
+
+<script type='text/javascript'>
+rubicontag.cmd.push(function() {
+    // set slot level keyword (addKW), first party visitor (FPV) and/or inventory (FPI) data 
+
+    rubicontag.defineSlot('/112115922/FLPT-728x90', [[728,90]], 'fastlane-lb-div').setPosition('atf').addKW('leaderboard-slot').setFPV('interests', ['sports', 'advertising']).setFPI('section', ['home', 'atf']);
+
+    rubicontag.addKW('fastlane');
+  
+    // run rubicontag
+    rubicontag.run(gptrun,1000);
+});
+googletag.cmd.push(function() {
+    // define your GPT slots
+    // replace '112115922' with your DFP network id
+    // replace 'FLPT-728x90' with your DFP ad unit name/path
+    // replace [728, 90] with ad unit width and height
+    // replace 'fastlane-lb-div with the unique ad unit div id for the element where the ad should render
+    gptadslots[0] = googletag.defineSlot('/112115922/FLPT-728x90', [[728, 90]], 'fastlane-lb-div').addService(googletag.pubads());
+
+    
+    // set rubicon targeting
+    for (var i=0; i<gptadslots.length; i++) {
+        rubicontag.setTargetingForGPTSlot(gptadslots[i]);
+    };
+    googletag.pubads().enableSingleRequest();
+    googletag.pubads().enableAsyncRendering();
+    googletag.enableServices();
+});
+var gptran = false;
+var gptrun = function() {
+    // don't run again if already ran
+    if (gptran) {
+        return;
+    }
+    gptran = true;
+    var gads = document.createElement('script');
+        gads.async = true;
+        gads.type = 'text/javascript';
+    var useSSL = 'https:' === document.location.protocol;
+        gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+    var node = document.getElementsByTagName('script')[0];
+        node.parentNode.insertBefore(gads, node);
+};
+// fail-safe to load gpt.js if fastlane doesn’t load or gptrun() callback is just never called
+setTimeout(gptrun, 1000);
+</script>
+</head>
+
+<body>
+<!--// replace '<ad-unit-div-id'> with a unique ad unit div id (.defineSlot & .display should match this) //-->
+<div id='fastlane-lb-div'>
+<script type='text/javascript'>
+    // replace '<ad-unit-div-id'> with the unique ad unit div id for the element where the ad should render
+    googletag.cmd.push(function() { googletag.display('fastlane-lb-div'); });
+</script>
+</div>
+
+</div>
+
+</body>
+</html>
