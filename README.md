@@ -85,11 +85,11 @@ FastLane is called via a simple Javascript file included in the `<HEAD>` tag on 
             <ul>
               
               <li>
-                 &shy; &nbsp;Only 1 ad slot mapping needed in the Rubicon backend config 
+                 Only 1 ad slot mapping needed in the Rubicon backend config 
               </li>
               
               <li>
-                 &shy; &nbsp;It should be set up as "catchAll" 
+                 It should be set up as "catchAll" 
               </li>
                
             </ul>
@@ -129,11 +129,11 @@ FastLane is called via a simple Javascript file included in the `<HEAD>` tag on 
             <ul>
               
               <li>
-                 &shy; &nbsp;Set page context to "mobile" via rubicontag.addContext()o n the web page 
+                 Set page context to "mobile" via rubicontag.addContext()o n the web page 
               </li>
               
               <li>
-                 &shy; &nbsp;Set up mobile specific slots in the backend config 
+                Set up mobile specific slots in the backend config 
               </li>
                
             </ul>
@@ -170,9 +170,9 @@ FastLane is called via a simple Javascript file included in the `<HEAD>` tag on 
           
           <div>
             
-            <p>
-               Utilize urlPattern set up in the backend config 
-            </p>
+            <ul>
+               <li>Utilize urlPattern set up in the backend config</li>
+            </ul>
              
           </div>
            
@@ -206,9 +206,9 @@ FastLane is called via a simple Javascript file included in the `<HEAD>` tag on 
           
           <div>
             
-            <p>
-               Create RegEx rules for the ad slot mapping creation 
-            </p>
+            <ul>
+               <li>Create RegEx rules for the ad slot mapping creation</li>
+            </ul>
              
           </div>
            
@@ -262,10 +262,10 @@ FastLane is called via a simple Javascript file included in the `<HEAD>` tag on 
             <div>
               <ul>
                 <li>
-                  &shy; &nbsp;Particular ad slots can be specified to be included for a Rubicon auction
+                  Particular ad slots can be specified to be included for a Rubicon auction
                 </li>
                 <li>
-                  &shy; &nbsp;Subsequent rubicontag.run() can be executed as the additional page slots are loaded
+                  Subsequent rubicontag.run() can be executed as the additional page slots are loaded
                 </li>
               </ul>
             </div>
@@ -348,11 +348,8 @@ FastLane is called via a simple Javascript file included in the `<HEAD>` tag on 
         <td>
           <div>
             <div>
-              <p>
-                &shy; Always set the ATF or BTF in
-              </p>
-              <p>
-                rubicontag.defineSlot().setPosition(' atf ')
+              <ul>
+                <li> Always set the ATF or BTF in rubicontag.defineSlot().setPosition('atf')</li>
               </p>
             </div>
           </div>
