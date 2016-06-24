@@ -10,7 +10,7 @@ var gptadslots = [];
 var googletag = googletag || {};
     googletag.cmd = googletag.cmd || [];
 (function() {
-    // replace '<account_id>' with your rubicon project account id number a test account is used for demo purposes
+    // replace '14062' with your rubicon project account id number a test account is used for demo purposes
     var account_id = 14062;
     var rct = document.createElement('script');
         rct.type = 'text/javascript'
@@ -23,27 +23,25 @@ var googletag = googletag || {};
 
 <script type='text/javascript'>
 rubicontag.cmd.push(function() {
-    // replace '/112115922/FLPT-728x90' with a unique string typically matches DFP ad unit name/path
-    // replace [728,90] with an array of dimensions of the given slot
-    rubicontag.defineSlot('/112115922/FLPT-728x90', [[728,90]], 'fastlane-lb-div');
-    rubicontag.defineSlot('/112115922/FLPT-300x250', [[728,90]], 'fastlane-mpu-div');
+    
+    var slot1 = rubicontag.defineSlot('/112115922/FLPT-728x90', [[728,90]], 'fastlane-lb-div');
+    var slot2 = rubicontag.defineSlot('/112115922/FLPT-300x250', [[300,250]], 'fastlane-mpu-div');
 
-    rubicontag.addKW('fastlane');
-  
+    // specify the slots that will be run for this auction & run rubicontag
+
+    rubicontag.run(function () {
+        gptrun();
+    }, {
+        slots: [slot1, slot2]
+    });
+
     // run rubicontag
     rubicontag.run(gptrun);
 });
 googletag.cmd.push(function() {
-    // define your GPT slots
-    // replace '112115922' with your DFP network id
-    // replace 'FLPT-728x90' with your DFP ad unit name/path
-    // replace [728, 90] with ad unit width and height
-    // replace 'fastlane-lb-div with the unique ad unit div id for the element where the ad should render
+
     gptadslots[0] = googletag.defineSlot('/112115922/FLPT-728x90', [[728, 90]], 'fastlane-lb-div').addService(googletag.pubads());
-
-    // Adding new slot
-
-    // gptadslots[1] = googletag.defineSlot('/112115922/FLPT-300x250', [[300, 250]], 'fastlane-mpu-div').addService(googletag.pubads());
+    gptadslots[1] = googletag.defineSlot('/112115922/FLPT-300x250', [[300, 250]], 'fastlane-mpu-div').addService(googletag.pubads());
     
     // set rubicon targeting
     for (var i=0; i<gptadslots.length; i++) {
@@ -82,7 +80,11 @@ setTimeout(gptrun, 1000);
 </script>
 </div>
 
+<div id='fastlane-mpu-div'>
+<script type='text/javascript'>
+    // replace '<ad-unit-div-id'> with the unique ad unit div id for the element where the ad should render
+    googletag.cmd.push(function() { googletag.display('fastlane-mpu-div'); });
+</script>
 </div>
-
 </body>
 </html>

@@ -1,0 +1,66 @@
+<html lang="en-us">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8"> 
+<style type="text/css" media="screen"> 
+</style>
+<script type='text/javascript'>
+var rubicontag = rubicontag || {};
+    rubicontag.cmd = rubicontag.cmd || [];
+var gptadslots = [];
+var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+(function() {
+    // replace '14062' with your rubicon project account id number a test account is used for demo purposes
+    var account_id = 14062;
+    var rct = document.createElement('script');
+        rct.type = 'text/javascript'
+        rct.async = true;
+        rct.src = (document.location.protocol === 'https:' ? 'https:' : 'http:') + '//ads.rubiconproject.com/header/' + account_id + '.js';
+    var node = document.getElementsByTagName('script')[0];
+        node.parentNode.appendChild(rct);
+})();
+</script>
+
+<script type='text/javascript'>
+rubicontag.cmd.push(function() {
+    
+    rubicontag.defineSlot('/112115922/FLPT-728x90', [[728,90]], 'fastlane-lb-div');
+
+    // run rubicontag
+    rubicontag.run(callAdServer);
+});
+
+var adServerCalled = false;
+
+
+var callAdServer = function() {
+
+    if (adServerCalled) {
+        return;
+    }
+
+    adServerCalled = true;
+
+    // getAdServerTargeting() can be used for all or individual slots  
+    // To get all of the targeting objects
+    var rpfl_targeting = [];
+    
+    for (var i = 0; i < window.rubicontag.getAllSlots().length; i++){
+        rpfl_targeting.push(window.rubicontag.getAllSlots()[i].getAdServerTargeting());  
+    };
+
+    // To get targeting for an individual slot
+    // fastlane-lb-div is the same as what’s passed in rubicontag.defineSlot()
+    window.rubicontag.getSlot('fastlane-lb-div').getAdServerTargeting();
+
+};
+
+// fail-safe to call ad-server
+setTimeout(callAdServer, 1000);
+</script>
+</head>
+
+<body>
+
+</body>
+</html>
