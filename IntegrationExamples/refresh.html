@@ -9,6 +9,8 @@ var rubicontag = rubicontag || {};
 var gptadslots = [];
 var googletag = googletag || {};
     googletag.cmd = googletag.cmd || [];
+
+
 (function() {
     // replace '<account_id>' with your rubicon project account id number a test account is used for demo purposes
     var account_id = 14062;
@@ -19,6 +21,17 @@ var googletag = googletag || {};
     var node = document.getElementsByTagName('script')[0];
         node.parentNode.appendChild(rct);
 })();
+
+(function() {
+    var gads = document.createElement('script');
+        gads.async = true;
+        gads.type = 'text/javascript';
+    var useSSL = 'https:' === document.location.protocol;
+        gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+    var node = document.getElementsByTagName('script')[0];
+        node.parentNode.insertBefore(gads, node);
+})();
+
 </script>
 
 <script type='text/javascript'>
@@ -46,12 +59,12 @@ googletag.cmd.push(function() {
 
     // gptadslots[1] = googletag.defineSlot('/112115922/FLPT-300x250', [[300, 250]], 'fastlane-mpu-div').addService(googletag.pubads());
     
-    // set rubicon targeting
-    for (var i=0; i<gptadslots.length; i++) {
-        rubicontag.setTargetingForGPTSlot(gptadslots[i]);
-    };
+   
     googletag.pubads().enableSingleRequest();
     googletag.pubads().enableAsyncRendering();
+
+    // Disables the call to DFP until refresh is called
+    googletag.pubads().disableInitialLoad();
     googletag.enableServices();
 });
 var gptran = false;
@@ -61,13 +74,16 @@ var gptrun = function() {
         return;
     }
     gptran = true;
-    var gads = document.createElement('script');
-        gads.async = true;
-        gads.type = 'text/javascript';
-    var useSSL = 'https:' === document.location.protocol;
-        gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
-    var node = document.getElementsByTagName('script')[0];
-        node.parentNode.insertBefore(gads, node);
+    
+    for (var i=0; i<gptadslots.length; i++) {
+        rubicontag.setTargetingForGPTSlot(gptadslots[i]);
+    };
+    
+    // Make call to DFP
+    googletag.cmd.push(function() {
+        googletag.pubads().refresh();
+    });
+    
 };
 // fail-safe to load gpt.js if fastlane doesn’t load or gptrun() callback is just never called
 setTimeout(gptrun, 1000);

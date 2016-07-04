@@ -4,17 +4,22 @@
 
 
 FastLane is called via a simple Javascript file included in the `<HEAD>` tag on the page to execute Rubicon Project Marketplace Auctions asynchronously prior to calling the primary Ad Server. The Ad Server can then be accurately informed of available demand from the Marketplace and therefore make better yield optimization decisions about which line item to render for any/all ad slots on any given page.
-##Code Samples
+##Code Samples (standard)
 - [Standard FastLane integration with DFP](IntegrationExamples/standard_gpt.html)
 - [Slot Level - Adding first party data and setting slot position](IntegrationExamples/first_party_data_slot_gpt.html#L28)
 
 - [Page Level - Adding first party data and contexts](IntegrationExamples/first_party_data_page_gpt.html#L30-L39)
 
-- [Running individual slots - For infinite scroll/dynamic pages](IntegrationExamples/infinite_scroll_page_gpt.html#L30-L39)
-
 - [Get ad server targeting (for non DFP ad servers)](IntegrationExamples/non_gpt_integration.html#L25-L59)
 
 - [Render creative code (code to be trafficked inside ad server)](IntegrationExamples/creative_render.html)
+
+
+## Code Samples (advanced)
+- [User initiated refresh (infinite scroll pages)](IntegrationExamples/refresh.html)
+
+- [Running individual slots](IntegrationExamples/individual_slots_gpt.html#L30-L39)
+
 
 
 ##Custom Use Cases
