@@ -4,9 +4,10 @@
 
 
 FastLane is called via a simple Javascript file included in the `<HEAD>` tag on the page to execute Rubicon Project Marketplace Auctions asynchronously prior to calling the primary Ad Server. The Ad Server can then be accurately informed of available demand from the Marketplace and therefore make better yield optimization decisions about which line item to render for any/all ad slots on any given page.
-##Code Samples (standard)
-- [Standard FastLane integration with DFP](IntegrationExamples/standard_gpt.html)
-- [Slot Level - Adding first party data and setting slot position](IntegrationExamples/first_party_data_slot_gpt.html#L28)
+##Code Samples (standard)
+
+- [Standard FastLane integration with DFP](IntegrationExamples/standard_gpt.html)
+- [Slot Level - Adding first party data and setting slot position](IntegrationExamples/first_party_data_slot_gpt.html#L28)
 
 - [Page Level - Adding first party data and contexts](IntegrationExamples/first_party_data_page_gpt.html#L30-L39)
 
@@ -375,10 +376,10 @@ FastLane is called via a simple Javascript file included in the `<HEAD>` tag on 
             <div>
               <ul>
                 <li>
-                  &shy; &nbsp;Ensure that there are no character formatting issues with the creative code
+                  Ensure that there are no character formatting issues with the creative code
                 </li>
                 <li>
-                  &shy; &nbsp;Always use a text editor to edit the code prior to trafficking it into the Ad Server
+                  Always use a text editor to edit the code prior to trafficking it into the Ad Server
                 </li>
               </ul>
             </div>
@@ -400,10 +401,10 @@ FastLane is called via a simple Javascript file included in the `<HEAD>` tag on 
             <div>
               <ul>
                 <li>
-                  &shy; &nbsp;Create the creative once per ad size
+                  Create the creative once per ad size
                 </li>
                 <li>
-                  &shy; &nbsp;Once all the line items are done, assign the creative in bulk to all the line items of that size
+                  Once all the line items are done, assign the creative in bulk to all the line items of that size
                 </li>
               </ul>
             </div>
@@ -463,3 +464,5 @@ FastLane is called via a simple Javascript file included in the `<HEAD>` tag on 
     </tbody>
   </table>
 </div>
+
+Please submit any issues or example requests through the Github issues page for this repository.

@@ -58,8 +58,11 @@ googletag.cmd.push(function() {
     // Adding new slot
 
     // gptadslots[1] = googletag.defineSlot('/112115922/FLPT-300x250', [[300, 250]], 'fastlane-mpu-div').addService(googletag.pubads());
+
+    for (var i=0; i<gptadslots.length; i++) {
+        rubicontag.setTargetingForGPTSlot(gptadslots[i]);
+    };
     
-   
     googletag.pubads().enableSingleRequest();
     googletag.pubads().enableAsyncRendering();
 
@@ -74,10 +77,6 @@ var gptrun = function() {
         return;
     }
     gptran = true;
-    
-    for (var i=0; i<gptadslots.length; i++) {
-        rubicontag.setTargetingForGPTSlot(gptadslots[i]);
-    };
     
     // Make call to DFP
     googletag.cmd.push(function() {
