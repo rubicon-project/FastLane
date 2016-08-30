@@ -74,7 +74,7 @@ var gptrun = function() {
         node.parentNode.insertBefore(gads, node);
 };
 // fail-safe to load gpt.js if fastlane doesn’t load or gptrun() callback is just never called
-setTimeout(gptrun);
+setTimeout(gptrun, 1000);
 </script>
 </head>
 
