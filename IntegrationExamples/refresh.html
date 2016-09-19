@@ -10,18 +10,12 @@ var gptadslots = [];
 var googletag = googletag || {};
     googletag.cmd = googletag.cmd || [];
 
+</script>
 
-(function() {
-    // replace '<account_id>' with your rubicon project account id number a test account is used for demo purposes
-    var account_id = 14062;
-    var rct = document.createElement('script');
-        rct.type = 'text/javascript'
-        rct.async = true;
-        rct.src = (document.location.protocol === 'https:' ? 'https:' : 'http:') + '//ads.rubiconproject.com/header/' + account_id + '.js';
-    var node = document.getElementsByTagName('script')[0];
-        node.parentNode.appendChild(rct);
-})();
+<!--Replace '14062' with your rubicon project account id number a test account is used for demo purposes-->
+<script type="text/javascript" src="http://ads.rubiconproject.com/header/14062.js"></script>
 
+<script type='text/javascript'>
 (function() {
     var gads = document.createElement('script');
         gads.async = true;
@@ -31,7 +25,6 @@ var googletag = googletag || {};
     var node = document.getElementsByTagName('script')[0];
         node.parentNode.insertBefore(gads, node);
 })();
-
 </script>
 
 <script type='text/javascript'>
