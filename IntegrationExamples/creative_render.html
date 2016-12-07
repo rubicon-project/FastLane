@@ -2,5 +2,6 @@
 <script  type='text/javascript'>
  var ifm = document.scripts[document.scripts.length-1].parentNode;
  var rptag = window.parent.rubicontag || window.top.rubicontag; 
- rptag.renderCreative(ifm, '%%PATTERN:rpfl_elemid%%', '<size­id>'); 
+ // Replace 'rubicon_project_size_id' with correct size_id, for example, mpu (300x250) will be 15
+ rptag.renderCreative(ifm, '%%PATTERN:rpfl_elemid%%', 'rubicon_project_size_id'); 
 </script>
